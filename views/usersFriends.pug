@@ -1,0 +1,18 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        link(rel="stylesheet", href="/styles/style.css")
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        script(src="https://code.jquery.com/jquery-3.6.4.min.js")
+        script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js")
+        script(src="/scripts/index.js")
+        title Друзья
+    body.pages
+        div.div-panel
+            p.return
+                a(href='/admin', style = "color: #1A72B8") На главную
+            p.info-panel #{user.FIO}. Друзья
+        include usersTable.pug
+        include editUser.pug

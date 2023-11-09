@@ -1,0 +1,37 @@
+[
+  {
+    "_id": 1,
+    "mail": "2215391@mail.ru",
+    "password": "LeRa2003"
+  },
+  {
+    "_id": 2,
+    "mail": "bezzubov@ynadex.ru",
+    "password": "SecurePa$$w0rd"
+  },
+  {
+    "_id": 3,
+    "mail": "TV@gmail.com",
+    "password": "Str0ngP@$$"
+  },
+  {
+    "_id": 4,
+    "mail": "anna.ivanova@gmail.com",
+    "password": "N0tSoE@sy123"
+  },
+  {
+    "_id": 5,
+    "mail": "petr.petrov@mail.ru",
+    "password": "C0mpl3xP@$$!"
+  },
+  {
+    "_id": 6,
+    "mail": "olga.sidorova@outlook.com",
+    "password": "S3cur1tyRul3z"
+  },
+  {
+    "_id": 7,
+    "mail": "mikhail.smirnov@yahoo.com",
+    "password": "Pa$$w0rd2023"
+  }
+]

@@ -1,0 +1,65 @@
+[
+  {
+    "_id": 1,
+    "img": "http://localhost:3000/img/user1.jpg",
+    "FIO": "Чернякова Валерия Алексеевна",
+    "birth": "2023-10-01",
+    "mail": "2215391@mail.ru",
+    "role": "Администратор",
+    "status": "Не подтвержден"
+  },
+  {
+    "_id": 2,
+    "img": "http://localhost:3000/img/delete.jpg",
+    "FIO": "Беззубов Даниил Викторович",
+    "birth": "2020-02-05",
+    "mail": "bezzubov@ynadex.ru",
+    "role": "Администратор",
+    "status": "Активен"
+  },
+  {
+    "_id": 3,
+    "img": "http://localhost:3000/img/user3.jpg",
+    "FIO": "Ярусова Татьяна Дмитриевна",
+    "birth": "1990-04-10",
+    "mail": "TV@gmail.com",
+    "role": "Пользователь",
+    "status": "Заблокирован"
+  },
+  {
+    "_id": 4,
+    "img": "http://localhost:3000/img/user4.jpg",
+    "FIO": "Иванова Алайна Сергеевна",
+    "birth": "1990-06-05",
+    "mail": "anna.ivanova@gmail.com",
+    "role": "Пользователь",
+    "status": "Не подтвержден"
+  },
+  {
+    "_id": 5,
+    "img": "http://localhost:3000/img/user5.jpg",
+    "FIO": "Петров Петр Александрович",
+    "birth": "1975-09-18",
+    "mail": "petr.petrov@mail.ru",
+    "role": "Администратор",
+    "status": "Активен"
+  },
+  {
+    "_id": 6,
+    "img": "http://localhost:3000/img/user6.jpg",
+    "FIO": "Сидорова Ольга Ивановна",
+    "birth": "2023-10-23",
+    "mail": "olga.sidorova@outlook.com",
+    "role": "Пользователь",
+    "status": "Не подтвержден"
+  },
+  {
+    "_id": 7,
+    "img": "http://localhost:3000/img/user7.jpg",
+    "FIO": "Смирнов Мишуля Андреевич",
+    "birth": "1995-07-30",
+    "mail": "mikhail.smirnov@yahoo.com",
+    "role": "Администратор",
+    "status": "Не подтвержден"
+  }
+]

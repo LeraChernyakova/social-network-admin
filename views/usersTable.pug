@@ -1,0 +1,48 @@
+table
+    thead
+        tr
+            th.th-info
+                | ID
+            th.th-info
+                | Фото
+            th.th-info
+                | ФИО
+            th.th-info
+                | Дата рождения
+            th.th-info
+                | Почта
+            th.th-info
+                | Роль
+            th.th-info
+                | Статус
+            th.th-click
+                | Друзья
+            th.th-click
+                | Сообщения
+            th.th-click
+                | Новости
+            th.th-click
+                | Изменить
+    tbody
+        each user in users
+            tr.tr-all-users
+                td.column-info #{user._id}
+                td.column-info
+                    img(src=user.img height=80 width=80)
+                td.column-info #{user.FIO}
+                td.column-info #{user.birth}
+                td.column-info #{user.mail}
+                td.column-info #{user.role}
+                td.column-info #{user.status}
+                td.column-click
+                    a(href="/admin/friends/" + user._id, style = "color: #1A72B8")
+                        i.fa.fa-users.fa-2x(aria-hidden='true')
+                td.column-click
+                    a(href="/admin/chats/" + user._id, style = "color: #1A72B8")
+                        i.fa.fa-comment.fa-2x(aria-hidden='true')
+                td.column-click
+                    a(href="/admin/news/" + user._id, style = "color: #1A72B8")
+                        i.fa.fa-newspaper-o.fa-2x(aria-hidden='true')
+                td.column-click
+                    button.btn-with-icon(type="button", data-toggle="modal", data-target=`#editUserModal-${user._id}`)
+                        i.fa.fa-pencil-square-o.fa-2x(aria-hidden='true')

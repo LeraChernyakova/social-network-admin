@@ -1,0 +1,163 @@
+@font-family: 'Verdana', system-ui;
+@background-image: url("/images/social.png");
+@dark-blue: #003B69;
+@light-blue: #1A72B8;
+@light-light-blue: #9FC3E0;
+@text-margin-left: 5px;
+
+* {
+  font-family: @font-family;
+}
+
+
+.start {
+  background-image: @background-image;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.social-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  vertical-align: middle;
+}
+
+h1 {
+  font-size: 48px;
+  color: transparent;
+  -webkit-text-stroke: 3px white;
+}
+
+.synergy {
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+.entry {
+  padding: 1% 8%;
+  background-color: @dark-blue;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.pages {
+  background-color: @light-blue;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.div-panel {
+  display: flex;
+  background-color: @light-light-blue;
+  flex-direction: column;
+}
+
+.panel {
+  margin-left: @text-margin-left;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.info-panel {
+  margin-left: @text-margin-left;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0.5;
+}
+
+.return {
+  margin-left: @text-margin-left;
+}
+
+.info-panel-news-chat {
+  margin-left: @text-margin-left;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0;
+}
+
+.return-news-chat {
+  margin-left: @text-margin-left;
+  line-height: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #E2F2FF;
+  border: 1px solid black;
+  font-size: 12px;
+}
+
+.th-info {
+  text-align: left;
+  padding: 5px;
+}
+
+.th-click {
+  text-align: center;
+  padding: 5px;
+}
+
+tbody {
+  background-color: white;
+  font-size: 12px;
+}
+
+.tr-all-users {
+  border: 1px solid black;
+}
+
+.column-info {
+  text-align: left;
+  padding: 5px;
+}
+
+.column-click {
+  text-align: center;
+  padding: 5px;
+}
+
+.btn-with-icon {
+  background: transparent;
+  border: none;
+  color: #1A72B8;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.div-news {
+  margin: 0 auto;
+  width: 98%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.info {
+  margin-left: @text-margin-left;
+  line-height: 0.5;
+  text-align: left;
+  font-size: 12px;
+  color: grey;
+}
+
+.text {
+  margin-left: @text-margin-left;
+  text-align: left;
+  font-size: 14px;
+}

@@ -1,0 +1,33 @@
+each user in users
+    .modal.fade(id=`editUserModal-${user._id}`)
+        .modal-dialog(role="document")
+            .modal-content
+                .modal-header
+                    h5.modal-title Редактирование данных
+                    button.close(type="button")
+                        span(aria-hidden="true") ×
+                .modal-body
+                    form#edit-user-form
+                        .form-group
+                            input.form-control(type="hidden" id="editUserId" name="userID" value=user._id)
+                        .form-group
+                            label(for="editUserFIO") ФИО:
+                            input.form-control(type="text", id="editUserFIO", name="FIO", value=user.FIO, pattern = "^[a-zA-Zа-яА-Я\\s]*$", required)
+                        .form-group
+                            label(for="editUserBirth") Дата рождения:
+                            input.form-control(type="date", id="editUserBirth", name="birth", max = "2023-10-23", value=user.birth, required)
+                        .form-group
+                            label(for="editUserEmail") Почта:
+                            input.form-control(type="email", id="editUserEmail", name="mail", value=user.mail, required)
+                        .form-group
+                            label(for="editUserRole") Роль:
+                            select.form-control(id="editUserRole" name="role")
+                                option(value="Пользователь", selected=user.role === 'Пользователь') Пользователь
+                                option(value="Администратор", selected=user.role === 'Администратор') Администратор
+                        .form-group
+                            label(for="editUserStatus") Статус:
+                            select.form-control(id="editUserStatus" name="status")
+                                option(value="Не подтвержден", selected=user.status === 'Не подтвержден') Не подтвержден
+                                option(value="Активен", selected=user.status === 'Активен') Активен
+                                option(value="Заблокирован", selected=user.status === 'Заблокирован') Заблокирован
+                        button.btn.btn-primary(type="submit") Сохранить изменения
