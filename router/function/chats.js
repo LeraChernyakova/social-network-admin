@@ -1,12 +1,10 @@
+const fs = require("fs");
+const path = require("path");
+const _ = require('lodash');
+
 const usersChatsStorage = require("../../storages/usersChats.json");
 const messagesStorage = require("../../storages/messages.json");
 const allUsersStorage = require("../../storages/allUsers.json");
-const usersFriendsStorage = require("../../storages/usersFriends.json");
-const fs = require("fs");
-const path = require("path");
-const usersNewsStorage = require("../../storages/usersNews.json");
-const newsStorage = require("../../storages/news.json");
-const _ = require('lodash');
 
 generateMessageId = function() {
     return messagesStorage[messagesStorage.length - 1]._id + 1;

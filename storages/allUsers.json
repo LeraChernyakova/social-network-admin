@@ -6,11 +6,11 @@
     "birth": "2023-10-01",
     "mail": "2215391@mail.ru",
     "role": "Администратор",
-    "status": "Не подтвержден"
+    "status": "Активен"
   },
   {
     "_id": 2,
-    "img": "http://localhost:3000/img/delete.jpg",
+    "img": "http://localhost:3000/img/user2.jpg",
     "FIO": "Беззубов Даниил Викторович",
     "birth": "2020-02-05",
     "mail": "bezzubov@ynadex.ru",
@@ -61,5 +61,14 @@
     "mail": "mikhail.smirnov@yahoo.com",
     "role": "Администратор",
     "status": "Не подтвержден"
+  },
+  {
+    "_id": 8,
+    "img": "http://localhost:3000/img/delete.jpg",
+    "FIO": "Бивалькевич Татьна Александровна",
+    "birth": "1970-02-15",
+    "mail": "2103535@mail.ru",
+    "role": "Пользователь",
+    "status": "Неподтвержден"
   }
 ]

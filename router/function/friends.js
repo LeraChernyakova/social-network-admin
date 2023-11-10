@@ -1,7 +1,8 @@
-const allUsersStorage = require("../../storages/allUsers.json");
-const usersFriendsStorage = require("../../storages/usersFriends.json");
 const fs = require("fs");
 const path = require("path");
+
+const allUsersStorage = require("../../storages/allUsers.json");
+const usersFriendsStorage = require("../../storages/usersFriends.json");
 
 exports.getFriends = function(friends) {
     let userFriendsInfo = [];

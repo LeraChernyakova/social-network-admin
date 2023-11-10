@@ -1,27 +1,31 @@
 const express = require("express");
+const Sentry = require('@sentry/node');
+
 const allUsersStorage = require("../storages/allUsers.json");
 const usersNewsStorage = require("../storages/usersNews.json");
 const usersFriendsStorage = require("../storages/usersFriends.json");
-const jwt = require('jsonwebtoken');
-const Sentry = require('@sentry/node');
+const usersChatsStorage = require("../storages/usersChats.json");
+
 const {createAccount} = require("./function/createAccount");
 const {createNews, getNews, getFriendsNews} = require("./function/news");
 const {authorizationUser} = require("./function/authorizationUser");
 const {getFriends, getOtherUsers, addFriend, deleteFriend} = require("./function/friends");
 const {getUserChats, getUserMessage, getOtherChats, addChat, createMessage} = require("./function/chats");
 const {changePhoto, deletePhoto} = require("./function/user");
-const multer = require('multer');
 const {getIo} = require("../socket");
+
+const jwt = require('jsonwebtoken');
 const router = express.Router();
+
+const multer = require('multer');
 const upload = multer({ dest: 'public/img' });
-const usersChatsStorage = require("../storages/usersChats.json");
+
 
 router.post('/api/authorization/login', (req, res) => {
     const {mail, password} = req.body;
     try {
         const user = authorizationUser(mail, password);
         if (user === 'password'){
-            Sentry.captureException({error: "Неверный пароль"});
             res.status(401).json({
                 success: false,
                 message: `Введен неверный пароль.`});
@@ -35,7 +39,6 @@ router.post('/api/authorization/login', (req, res) => {
             res.status(200).json({success: true, token, user});
         }
         else {
-            Sentry.captureException({error: "Неверные учетные данные"});
             res.status(401).json({
                 success: false,
                 message: `Введены неверные учетные данные.`});
@@ -52,9 +55,6 @@ router.post('/api/createAccount', (req, res) => {
     try {
         const {mail, password, FIO, birth} = req.body;
         if (allUsersStorage.some(user => user.mail === mail)) {
-            Sentry.captureException({
-                error: 'Пользователь с таким mail уже зарегистрирован.'
-            });
             return res.status(400).json({
                 success: false,
                 message: 'Пользователь с таким mail уже зарегистрирован.'
@@ -89,6 +89,7 @@ router.get('/api/user/:id', (req, res) => {
         res.status(200).json(user);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });
@@ -100,6 +101,7 @@ router.get('/api/user/news/:id', (req, res) => {
         res.status(200).json(news);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });
@@ -170,6 +172,7 @@ router.get('/api/user/friends/news/:id',(req, res) => {
         res.status(200).json(news);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });
@@ -181,6 +184,7 @@ router.get('/api/user/friends/:id',(req, res) => {
         res.status(200).json(friends);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });
@@ -193,6 +197,7 @@ router.get('/api/allUsers/:id', (req, res) => {
         res.status(200).json(users);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });
@@ -244,6 +249,7 @@ router.get('/api/user/chats/:id',(req, res) => {
         res.status(200).json(chats);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 })
@@ -254,6 +260,7 @@ router.get('/api/messages/:where/:whom',(req, res) => {
         res.status(200).json(message);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 })
@@ -266,6 +273,7 @@ router.get('/api/chat/allUsers/:id', (req, res) => {
         res.status(200).json(users);
     }
     catch (error) {
+        Sentry.captureException(error);
         console.error(error);
     }
 });

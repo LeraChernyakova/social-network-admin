@@ -4,7 +4,6 @@ const path = require("path");
 const newsStorage = require("../../storages/news.json");
 const allUsersStorage = require("../../storages/allUsers.json");
 const usersNewsStorage = require("../../storages/usersNews.json");
-const usersFriendsStorage = require("../../storages/usersFriends.json")
 
 generateNewsId = function() {
     return newsStorage[newsStorage.length - 1]._id + 1;

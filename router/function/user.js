@@ -1,9 +1,9 @@
-const allUsersStorage = require('../../storages/allUsers.json');
 const {writeFileSync} = require("fs");
 const {join} = require("path");
 const fs = require("fs");
 const path = require("path");
 
+const allUsersStorage = require('../../storages/allUsers.json');
 
 exports.getAllUsers = function() {
     return allUsersStorage;
@@ -27,6 +27,15 @@ exports.updateUserInfo = function(req) {
 
 exports.changePhoto = function(id, photo) {
     const index = allUsersStorage.findIndex(user => user._id === id);
+    const originalUrl = allUsersStorage[index].img;
+    let transformedPath = originalUrl.replace(/^.*\/\/[^/]+/, 'public');
+    if (transformedPath !== "public/img/delete.jpg") {
+        fs.unlink(transformedPath, (err) => {
+            if (err) {
+                console.error(`Ошибка при удалении файла: ${err.message}`);
+            }
+        });
+    }
     allUsersStorage[index].img = "http://localhost:3000/img/" + photo;
     fs.writeFileSync(
         path.join(__dirname, '../../storages/allUsers.json'),
@@ -36,6 +45,13 @@ exports.changePhoto = function(id, photo) {
 
 exports.deletePhoto = function(id) {
     const index = allUsersStorage.findIndex(user => user._id === id);
+    const originalUrl = allUsersStorage[index].img;
+    let transformedPath = originalUrl.replace(/^.*\/\/[^/]+/, 'public');
+    fs.unlink(transformedPath, (err) => {
+        if (err) {
+            console.error(`Ошибка при удалении файла: ${err.message}`);
+        }
+    });
     allUsersStorage[index].img = "http://localhost:3000/img/delete.jpg";
     fs.writeFileSync(
         path.join(__dirname, '../../storages/allUsers.json'),

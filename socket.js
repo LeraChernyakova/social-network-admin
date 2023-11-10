@@ -6,15 +6,14 @@ exports.initIo = function (httpServer) {
     io = new Server(httpServer, {
         cors: {
             origin: 'http://localhost:4200',
-            methods: ['GET', 'POST', 'DELETE'], // Методы, а не method
+            methods: ['GET', 'POST', 'DELETE'],
             credentials: true
         },
     });
 
     io.on('connection', (socket) => {
-        // Обработчик события "disconnect"
         socket.on('disconnect', () => {
-            console.log('User disconnected');
+            console.log('Пользователь отключился...');
         });
     });
 }

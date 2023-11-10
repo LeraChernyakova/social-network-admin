@@ -33,5 +33,20 @@
     "_id": 7,
     "mail": "mikhail.smirnov@yahoo.com",
     "password": "Pa$$w0rd2023"
+  },
+  {
+    "_id": 8,
+    "mail": "undefined",
+    "password": "Bival1970!"
+  },
+  {
+    "_id": 9,
+    "mail": "2103535@mail.ru",
+    "password": "Bival1970!"
+  },
+  {
+    "_id": 8,
+    "mail": "2103535@mail.ru",
+    "password": "Bival1970!"
   }
 ]
